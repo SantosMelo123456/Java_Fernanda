@@ -15,15 +15,15 @@ Com base na descrição abaixo, exiba os descontos do IR:
 
             if (salario <= 900) {
               System.out.println('isento')
-            } else if ( 901 < salario > 1500) 
+            } else if ( salario 900 && salario <= 1500) 
             {
               System.out.println('imposto de 5%')
-            } else if ( 1501 < salario > 2500) 
+            } else if ( salario 1500 && salario <= 2500) 
             {
               System.out.println('imposto de 10%')
-            } else  
-           {
-                System.out.println ('imposto de 20')
+            } 
+           { else  {
+              System.out.println('imposto de 20%')
             }
         }
     }
