@@ -1,0 +1,77 @@
+*/
+Todo esse código aqui ficará no Main
+/*
+import java.util.Scanner;
+
+public class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Scanner sc2 = new Scanner(System.in);
+
+        System.out.print("Digite seu peso (em kg): ");
+        double peso = sc.nextDouble();
+
+        System.out.print("Digite sua altura (em metros): ");
+        double altura = sc.nextDouble();
+
+        double imc = peso / (altura * altura);
+        System.out.printf("Seu IMC é: %.2f\n", imc);
+
+        if (imc < 18.5) {
+            System.out.println("Classificação: Abaixo do peso");
+
+        } else if (imc >=18.5 && imc <= 24.9) {
+            System.out.println("Classificação: Peso normal");
+
+        } else if (imc >=25 && imc <= 29.9) {
+            System.out.println("Classificação: Sobrepeso");
+
+        } else {
+            System.out.println("Classificação: Obesidade grau 3");
+        }
+
+
+
+
+
+        System.out.println("Nome: ");
+        String nome = sc2.nextLine();
+        System.out.println("Idade: ");
+        int idade = sc.nextInt();
+        System.out.println("RG: ");
+        int RG = sc.nextInt();
+        System.out.println("CPF: ");
+        int  CPF = sc.nextInt();
+
+        System.out.printf("\nNome: %s\nIdade: %d\nRG: %s\nCPF: %s\n", nome, idade, RG, CPF);
+        sc.close();
+
+
+
+        Pessoa p = new Pessoa();
+
+        System.out.println("antiga: " + p.idade);
+        p.niver();
+
+        System.out.println("atual: " + p.idade);
+
+
+
+    }
+
+}
+
+
+*/
+Esses códigos ficará na Pessoa.java:
+/*
+public class Pessoa {
+
+    int idade = 2;
+    public void niver () {
+        idade ++;
+    }
+    public void imc () {
+
+    }
+}
