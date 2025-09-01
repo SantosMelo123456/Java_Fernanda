@@ -1,0 +1,33 @@
+*/
+Esses códigos ficará guardado no main:
+/*
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Calculadora c = new Calculadora();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Número 1 ");
+        c.n1 = sc.nextInt();
+        System.out.print("Número 2");
+        c.n2 = sc.nextInt();
+        c.somar();
+        System.out.print(c.total);
+
+    }
+}
+
+*/
+ESSES CÓDIGOS FICARÃO GUARDADOS NA CALCULADORA:
+
+/*
+public class Calculadora {
+    int n1,n2, total;
+
+    public void somar () {
+        total = n1 + n2;
+    }
+}
+
