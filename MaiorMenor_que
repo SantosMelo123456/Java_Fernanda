@@ -1,0 +1,21 @@
+/* 
+Elabore um programa que verifique se uma variável inteira é
+maior, menor ou igual a outra variável inteira 
+*/
+
+public class Main {
+    public static void main(String[] args) {
+
+        int x = 10;
+        int y = 20;
+
+        if (x > y) {
+            System.out.println('x é maior que y')
+        } else if ( x < y) {
+            System.out.println('x é menor que y')
+        } else {
+            System.out.println('x é igual a y')
+
+       }
+    }
+}
