@@ -1,0 +1,19 @@
+/* Fazer um programa que calcule o salário de um funcionário com
+base no valor da hora trabalhada de R$ 15.00 e na quantidade
+de 40 horas trabalhadas e exiba o salário.
+1h = 15 reais
+40h * 15 reais
+*/
+
+public class Main {
+    public static void main(String[] args) {
+
+        double ValorHora = 15;
+        int Horastrabalhadas= 40;
+        double salario;
+
+        salario = ValorHora + HorasTrabalhadas;
+
+        System.out.println('Salario = R$ + salario');
+    }
+}
