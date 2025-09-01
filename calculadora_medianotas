@@ -1,0 +1,29 @@
+*/
+Elaborar um programa que receba 3 notas (N1=7, N2=8, N3=9).
+Em seguida, calcular a média e verifique se o aluno está aprovado, reprovado ou na final.
+Observação: Aprovado >= 70, Reprovado < 40.
+Desafio: Como saber se está na final?
+/*
+
+public class Main {
+    public static void main(String[] args) {
+
+        int nota1 = 7;
+        int nota2 = 8;
+        int nota3 = 9;
+        double media;
+
+        media = nota1 + nota2 + nota3;
+
+        System.ou.println('Média: + media')
+
+        if (media >= 70) {
+          System.out.println('aluno aprovado')
+        } else if (media < 40) {
+          Sytem.out.println('aluno reprovado')
+       } else {
+          System.out.println('aluno está na final')
+    }
+  }
+}
+}
