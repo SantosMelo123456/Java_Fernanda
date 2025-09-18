@@ -1,0 +1,38 @@
+// faltou só calcular a média das notas!
+
+// Elabore um programa que tenha a seguinte execução:
+//bem vindo ao calculador de media do aluno!
+//Insira uma nota do aluno: 7.5
+//Deseja inserir outra nota?(Digite "S" pra SIM ou "N" para NÃO)
+//Insira uma nota do aluno: 8.0
+//Deseja inserir outra nota?(Digite "S" pra SIM ou "N" para NÃO)
+//Insira uma nota do aluno: 6.5
+//Deseja inserir outra nota?(Digite "S" pra SIM ou "N" para NÃO)
+
+// media das notas: 7.33
+//Obrigada por usar o programa
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String r;
+        Scanner scanner = new Scanner(System.in);
+
+
+
+        do {
+            System.out.print("Digite uma nota no aluno: ");
+            double matricula = scanner.nextDouble();
+            scanner.nextLine();
+
+            System.out.println("\nPara inserir uma outra nota, digite 'S' ou 'N' para não inserir ");
+            r = scanner.nextLine();
+
+        } while (r.equalsIgnoreCase("S"));
+
+        scanner.close();
+    }
+}
