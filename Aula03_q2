@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String r;
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.print("Programa de cálculo de aprovação final - @escolax!");
+            scanner.nextLine();
+
+            System.out.print("Digite seu nome: ");
+            String nome = scanner.nextLine();
+            scanner.nextLine();
+
+            System.out.print("Digite sua 1° nota: ");
+            double nota1 = scanner.nextDouble();
+            scanner.nextLine();
+
+            System.out.print("Digite sua 2° nota: ");
+            double nota2 = scanner.nextDouble();
+            scanner.nextLine();
+
+            double media = (nota1+ nota2) / 2;
+
+            System.out.printf("A média das notas é: %.2f%n", media);
+
+                if (media >= 70) {
+                    System.out.println("Situação: Aprovado");
+                } else if (media < 40) {
+                    System.out.println("Situação: Reprovado");
+                } else {
+                    System.out.println("Situação: Prova final");
+
+                }
+
+                System.out.println("\nPara digitar novamente, digite S");
+            r = scanner.nextLine();
+
+        } while (r.equalsIgnoreCase("S"));
+
+        scanner.close();
+    }
+}
+
+
