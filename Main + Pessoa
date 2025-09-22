@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[]  args) {
+
+    Scanner sc = new Scanner (System.in);
+    Pessoa p = new Pessoa();
+
+
+    System.out.println("Idade: ");
+    p.setIdade (sc.nextInt());
+
+    System.out.println("A idade é: " + p.getIdade());
+
+    System.out.println("A idade atual é:" + p.fazer_anive());
+
+
+    }
+
+}
+////////////////////////////////////////////////////////////////////////////////////
+public class Pessoa {
+
+    private String nome;
+
+    private int idade;
+
+    private Double altura;
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setAltura(Double altura) {
+        this.altura = altura;
+    }
+
+    public Double getAltura() {
+        return altura;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int fazer_anive() {
+        idade++;
+        return idade;
+
+
+    }
+}
+
+
