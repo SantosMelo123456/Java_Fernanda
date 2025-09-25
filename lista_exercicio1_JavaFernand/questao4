@@ -1,0 +1,136 @@
+//Uma plataforma de streaming quer organizar seu catálogo de títulos.
+//O programa deve permitir:
+//1. Cadastrar um título.
+//2. Exibir os detalhes do título (nome, gênero, ano de lançamento e duração em minutos).
+//3. Avaliar o título (usuário dá uma nota de 0 a 10).
+//4. Mostrar a média de avaliações.
+//5. Sair
+//Classe a ser criada: Filme
+//• Atributos: nome, genero, ano, duracao, somaNotas, qtdAvaliacoes
+//• Métodos: exibirDetalhes(), avaliar (int nota), calcularMediaAvaliacoes()
+
+import java.util.Scanner;
+
+class Titulo {
+    String nome;
+    String genero;
+    int ano;
+    double duracao;
+    double somaNotas;
+    int qtdAvaliacoes;
+
+    public Titulo(String nome, String genero, int ano, double duracao) {
+        this.nome = nome;
+        this.genero = genero;
+        this.ano = ano;
+        this.duracao = duracao;
+        this.somaNotas = 0;
+        this.qtdAvaliacoes = 0;
+    }
+
+    public void exibirDetalhes() {
+        System.out.println("Título: " + nome);
+        System.out.println("Gênero: " + genero);
+        System.out.println("Ano: " + ano);
+        System.out.println("Duração: " + duracao + " minutos");
+        if (qtdAvaliacoes > 0) {
+            System.out.println("Média de avaliações: " + calcularMediaAvaliacoes());
+        } else {
+            System.out.println("Ainda não há avaliações.");
+        }
+    }
+
+    public void avaliar(int nota) {
+        if (nota >= 0 && nota <= 10) {
+            somaNotas += nota;
+            qtdAvaliacoes++;
+            System.out.println("Obrigado pela avaliação!");
+        } else {
+            System.out.println("Nota inválida!");
+        }
+    }
+
+    public double calcularMediaAvaliacoes() {
+        if (qtdAvaliacoes == 0) return 0;
+        return somaNotas / qtdAvaliacoes;
+    }
+}
+
+public class Avaliacao {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Titulo filme = null;
+        int opcao;
+
+        do {
+            System.out.println("\n=== Menu ===");
+            System.out.println("1 - Cadastrar título");
+            System.out.println("2 - Exibir detalhes do título");
+            System.out.println("3 - Avaliar título");
+            System.out.println("4 - Mostrar média de avaliações");
+            System.out.println("5 - Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = sc.nextInt();
+            sc.nextLine(); 
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o nome do filme: ");
+                    String nome = sc.nextLine();
+                    System.out.print("Digite o gênero: ");
+                    String genero = sc.nextLine();
+                    System.out.print("Digite o ano de lançamento: ");
+                    int ano = sc.nextInt();
+                    System.out.print("Digite a duração em minutos: ");
+                    double duracao = sc.nextDouble();
+                    sc.nextLine(); 
+                    filme = new Titulo(nome, genero, ano, duracao);
+                    System.out.println("Filme cadastrado com sucesso!");
+                    break;
+
+                case 2:
+                    if (filme != null) {
+                        filme.exibirDetalhes();
+                    } else {
+                        System.out.println("Nenhum filme cadastrado ainda.");
+                    }
+                    break;
+
+                case 3:
+                    if (filme != null) {
+                        int nota;
+                        do {
+                            System.out.print("Digite uma nota de 0 a 10: ");
+                            while (!sc.hasNextInt()) {
+                                System.out.print("Número inválido. Digite novamente: ");
+                                sc.next();
+                            }
+                            nota = sc.nextInt();
+                        } while (nota < 0 || nota > 10);
+                        filme.avaliar(nota);
+                    } else {
+                        System.out.println("Nenhum filme cadastrado ainda.");
+                    }
+                    break;
+
+                case 4:
+                    if (filme != null) {
+                        System.out.println("Média de avaliações: " + filme.calcularMediaAvaliacoes());
+                    } else {
+                        System.out.println("Nenhum filme cadastrado ainda.");
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Saindo...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        } while (opcao != 5);
+
+        sc.close();
+    }
+}
+
