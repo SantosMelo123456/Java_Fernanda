@@ -1,0 +1,44 @@
+//a) 
+class Medico {
+    String nome;
+    String crm;
+
+    void mostrarDados() {
+        System.out.println("Nome: " + nome);
+        System.out.println("CRM: " + crm);
+    }
+}
+
+class ClinicoGeral extends Medico {
+    String setor = "Clínico Geral";
+
+    void atender() {
+        System.out.println(nome + " está atendendo no setor de " + setor);
+    }
+}
+
+class Cirurgiao extends Medico {
+    String especialidade = "Cirurgião";
+
+    void operar() {
+        System.out.println(nome + " está realizando uma cirurgia");
+    }
+}
+
+public class SistemaHospitalar {
+    public static void main(String[] args) {
+        ClinicoGeral cg = new ClinicoGeral();
+        cg.nome = "Dra. Paula";
+        cg.crm = "12345";
+        cg.mostrarDados();
+        cg.atender();
+
+        System.out.println();
+
+        Cirurgiao c = new Cirurgiao();
+        c.nome = "Dr. Marcos";
+        c.crm = "67890";
+        c.mostrarDados();
+        c.operar();
+    }
+}
