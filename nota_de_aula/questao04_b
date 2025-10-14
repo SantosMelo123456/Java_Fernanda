@@ -41,16 +41,16 @@ class Pedido {
 public class SistemaVendas {
     public static void main(String[] args) {
         Cliente cli = new Cliente();
-        cli.nome = "Ana";
+        cli.nome = "Linda";
         cli.cpf = "123.456.789-00";
 
         Vendedor vend = new Vendedor();
-        vend.nome = "Carlos";
-        vend.matricula = "V001";
+        vend.nome = "Daniel";
+        vend.matricula = "V007";
 
         Pedido p1 = new Pedido();
-        p1.numero = 101;
-        p1.data = "13/10/2025";
+        p1.numero = 201;
+        p1.data = "12/10/2025";
         p1.valorTotal = 250.0;
         p1.cliente = cli;
         p1.vendedor = vend;
@@ -62,4 +62,5 @@ public class SistemaVendas {
         p1.mostrar();
     }
 }
+
  
