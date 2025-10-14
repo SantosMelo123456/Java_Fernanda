@@ -28,7 +28,7 @@ class Cirurgiao extends Medico {
 public class SistemaHospitalar {
     public static void main(String[] args) {
         ClinicoGeral cg = new ClinicoGeral();
-        cg.nome = "Dra. Paula";
+        cg.nome = "Dra. Roberto Lacerda";
         cg.crm = "12345";
         cg.mostrarDados();
         cg.atender();
@@ -36,9 +36,10 @@ public class SistemaHospitalar {
         System.out.println();
 
         Cirurgiao c = new Cirurgiao();
-        c.nome = "Dr. Marcos";
+        c.nome = "Dr. Marcos Andrade";
         c.crm = "67890";
         c.mostrarDados();
         c.operar();
     }
 }
+
