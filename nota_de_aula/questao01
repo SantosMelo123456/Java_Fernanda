@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String r;
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.print("Bom dia Funcionário - Digite o seu nome: ");
+            String nome = scanner.nextLine();
+
+            System.out.print("Digite sua matrícula: ");
+            int matricula = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Digite seu salário bruto: ");
+            double salario_bruto = scanner.nextDouble();
+            scanner.nextLine();
+
+            
+            double descontoINSS = salario_bruto * 0.15;
+            double salarioLiquido = salario_bruto - descontoINSS;
+
+
+            System.out.println("\n=== CONTRACHEQUE ===");
+            System.out.println("Matrícula: " + matricula);
+            System.out.println("Nome completo: " + nome);
+            System.out.printf("Salário Bruto: R$ %.2f%n", salario_bruto);
+            System.out.printf("Dedução INSS: R$ %.2f%n", descontoINSS);
+            System.out.printf("Salário Líquido: R$ %.2f%n", salarioLiquido);
+
+            System.out.println("\nPara digitar novamente, digite S");
+            r = scanner.nextLine();
+
+        } while (r.equalsIgnoreCase("S"));
+
+        scanner.close();
+    }
+}
