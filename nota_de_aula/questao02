@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ContaBancaria {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String op;
+        double saldo = 0;
+
+        System.out.print("Número da conta: ");
+        int numConta = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Nome do titular: ");
+        String nome = sc.nextLine();
+
+        ContaBancaria outraConta = new ContaBancaria();
+        outraConta.numConta = 123456;
+        outraConta.nome = "Conta do João";
+        outraConta.saldo = 0;
+
+        do {
+            System.out.println("\n------ MENU ------");
+            System.out
+ 
