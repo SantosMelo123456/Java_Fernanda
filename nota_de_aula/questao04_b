@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+
+class Cliente {
+    String nome;
+    String cpf;
+    ArrayList<Pedido> pedidos = new ArrayList<>();
+
+    void fazerPedido(Pedido p) {
+        pedidos.add(p);
+        System.out.println(nome + " fez o pedido nº " + p.numero);
+    }
+}
+
+class Vendedor {
+    String nome;
+    String matricula;
+    ArrayList<Pedido> pedidosEmitidos = new ArrayList<>();
+
+    void emitirPedido(Pedido p) {
+        pedidosEmitidos.add(p);
+        System.out.println(nome + " emitiu o pedido nº " + p.numero);
+    }
+}
+
+class Pedido {
+    int numero;
+    String data;
+    double valorTotal;
+    Cliente cliente;
+    Vendedor vendedor;
+
+    void mostrar() {
+        System.out.println("Pedido nº: " + numero);
+        System.out.println("Data: " + data);
+        System.out.println("Valor: R$ " + valorTotal);
+        System.out.println("Cliente: " + cliente.nome);
+        System.out.println("Vendedor: " + vendedor.nome);
+    }
+}
+
+public class SistemaVendas {
+    public static void main(String[] args) {
+        Cliente cli = new Cliente();
+        cli.nome = "Ana";
+        cli.cpf = "123.456.789-00";
+
+        Vendedor vend = new Vendedor();
+        vend.nome = "Carlos";
+        vend.matricula = "V001";
+
+        Pedido p1 = new Pedido();
+        p1.numero = 101;
+        p1.data = "13/10/2025";
+        p1.valorTotal = 250.0;
+        p1.cliente = cli;
+        p1.vendedor = vend;
+
+        cli.fazerPedido(p1);
+        vend.emitirPedido(p1);
+
+        System.out.println();
+        p1.mostrar();
+    }
+}
+ 
