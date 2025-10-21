@@ -1,0 +1,156 @@
+// criar em diferentes páginas!
+
+public class Main{
+    public static void main(String[] args) {
+
+        Professor p = new Professor("João", 40, "Matemática");
+        Aluno a = new Aluno("Maria", 17);
+
+
+        System.out.println("Informações do Professor:");
+        System.out.println(p);
+
+        System.out.println("Informações do Aluno:");
+        System.out.println(a);
+
+    }
+}
+
+// aluno
+
+public class Main{
+    public static void main(String[] args) {
+
+        Professor p = new Professor("João", 40, "Matemática");
+        Aluno a = new Aluno("Maria", 17);
+
+
+        System.out.println("Informações do Professor:");
+        System.out.println(p);
+
+        System.out.println("Informações do Aluno:");
+        System.out.println(a);
+
+    }
+}
+
+// CARGO
+
+public enum CARGO {
+    Professor,
+    Coordenador,
+    Secretário,
+    Auxiliar;
+}
+
+// Folha de pagamento
+
+public interface FolhaPagamento {
+
+    public void pagar();
+
+
+}
+
+public class Main{
+    public static void main(String[] args) {
+
+        Professor p = new Professor("João", 40, "Matemática");
+        Aluno a = new Aluno("Maria", 17);
+
+
+        System.out.println("Informações do Professor:");
+        System.out.println(p);
+
+        System.out.println("Informações do Aluno:");
+        System.out.println(a);
+
+    }
+}
+
+// Pessoa
+
+public abstract class Pessoa {
+
+    private String nome;
+    private int idade;
+
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome () {
+        return nome;
+        }
+
+    public void setNome (String nome){
+        this.nome = nome;
+        }
+
+    public String toString () {
+        return "Nome: " + nome + ", Idade: " + idade;
+    }
+    public abstract void QuemSouEU();
+
+
+}
+
+// Professor:
+
+public final class Professor extends Pessoa  implements FolhaPagamento{
+ // como se fosse um nó que não tem filho, uma folha.
+    public CARGO cargo;
+    private String especialidade;
+
+    public Professor(String nome, int idade, String especialidade) {
+        super(nome, idade);
+        this.especialidade = especialidade;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    public CARGO getCargo() {
+        return cargo;
+    }
+
+    public String toString() {
+        return super.toString() + ", especialidade: " + especialidade;
+    }
+
+
+    public Professor(String nome, int idade) {
+        super(nome, idade);
+    }
+
+    @Override
+    public void QuemSouEU() {
+
+    }
+
+    @Override
+    public void setNome(String nome) {
+        super.setNome(nome);
+    }
+
+    @Override
+    public String getNome() {
+        return super.getNome();
+    }
+
+    @Override
+    public void pagar() {
+
+    }
+}
+
+
+
+
